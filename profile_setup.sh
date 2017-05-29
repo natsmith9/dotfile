@@ -72,6 +72,11 @@ git clone --depth=1 https://github.com/vim-syntastic/syntastic.git
 if [ $? -ne 0 ]; then
     RC=$?
 fi
+git clone git://github.com/Raimondi/delimitMate.git
+
+if [ $? -ne 0 ]; then
+    RC=$?
+fi
 
 if [ $RC -ne 0 ]; then
     echo "There were problems with the installation. Please check output for errors."
