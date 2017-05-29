@@ -35,6 +35,14 @@ for file in $files; do
     ln -s $dir/$file ~/.$file
 done
 
+# check to see if .vim folder exists. if not, make directory
+
+if [ ! -d "~/.vim" ]; then
+    echo "Making .vim directory."
+    mkdir ~/.vim
+    echo "...done"
+fi
+
 # make vim autoload and bundle directories, install pathogen and clone Vim Sensible and Solarized Vim colors
 echo "Making Vim autoload and bundle directories"
 mkdir ~/.vim/autoload ~/.vim/bundle
