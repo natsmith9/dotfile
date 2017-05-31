@@ -49,20 +49,24 @@ mkdir ~/.vim/autoload ~/.vim/bundle
 echo "...done"
 
 echo "Installing Pathogen and other Vim plugins..."
-curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+#curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+cd ~/.vim
+git clone https://github.com/tpope/vim-pathogen.git
+mv vim-pathogen/autoload/* autoload/
+rm -rf vim-pathogen
 
 if [ $? -ne 0 ]; then
     RC=$?
 fi
 
-cd ~/.vim/bundle
+cd bundle
 
 git clone https://github.com/tpope/vim-sensible.git 
 
 if [ $? -ne 0 ]; then
     RC=$?
 fi
-git clone git://github.com/altercation/vim-colors-solarized.git 
+git clone https://github.com/altercation/vim-colors-solarized.git 
 
 if [ $? -ne 0 ]; then
     RC=$?
@@ -72,7 +76,7 @@ git clone --depth=1 https://github.com/vim-syntastic/syntastic.git
 if [ $? -ne 0 ]; then
     RC=$?
 fi
-git clone git://github.com/Raimondi/delimitMate.git
+git clone https://github.com/Raimondi/delimitMate.git
 
 if [ $? -ne 0 ]; then
     RC=$?

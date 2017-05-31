@@ -11,3 +11,6 @@ PATH=$PATH:$HOME/.local/bin:$HOME/bin
 
 export PATH
 export PS1="\e[0;37;42m\u@\h:\e[m\$PWD> "
+
+eval $(dircolors -b ~/.dir_colors)
+#eval `dircolors -b > ~/.dir_colors`
